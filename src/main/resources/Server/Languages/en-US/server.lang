@@ -1,0 +1,5 @@
+server.kiosk.customUI.kioskPage.title={player} Kiosk
+server.kiosk.customUI.kioskPage.inStock=In Stock: {count}
+server.kiosk.customUI.kioskPage.restocksToday=Restocks today at {restockTime}
+server.kiosk.customUI.kioskPage.restocksTomorrow=Restocks tomorrow at {restockTime}
+server.kiosk.customUI.kioskPage.restocksInDays=Restocks in {days} days

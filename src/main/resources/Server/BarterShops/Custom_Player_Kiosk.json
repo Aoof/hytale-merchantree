@@ -1,0 +1,31 @@
+{
+  "DisplayNameKey": "server.barter.kweebec_merchant.title",
+  "TradeSlots": [
+    {
+      "Type": "Fixed",
+      "Trade": {
+        "Output": { "ItemId": "Ingredient_Spices", "Quantity": 999 },
+        "Input": [{ "ItemId": "Ingredient_Life_Essence", "Quantity": 1 }],
+        "Stock": 10
+      }
+    },
+    {
+      "Type": "Pool",
+      "SlotCount": 3,
+      "Trades": [
+        {
+          "Weight": 50,
+          "Output": { "ItemId": "Plant_Crop_Berry_Block", "Quantity": 1 },
+          "Input": [{ "ItemId": "Ingredient_Life_Essence", "Quantity": 30 }],
+          "Stock": [10, 20]
+        },
+        {
+          "Weight": 30,
+          "Output": { "ItemId": "Plant_Crop_Berry_Winter_Block", "Quantity": 1 },
+          "Input": [{ "ItemId": "Ingredient_Life_Essence", "Quantity": 50 }],
+          "Stock": [10, 20]
+        }
+      ]
+    }
+  ]
+}
