@@ -161,9 +161,9 @@ publishing {
  * Copies HytaleServer.jar from the game installation to the libraries directory.
  * Run this manually when you need to update your local server jar.
  */
-val copyServerFromGame by tasks.registering {
+val copyServerFromHytale by tasks.registering {
     group = "hytale"
-    description = "Copies HytaleServer.jar from the game installation to the libraries directory"
+    description = "Copies HytaleServer.jar from the server to the libraries directory"
 
     // Only run if the source file exists and is newer than destination
     onlyIf { hytaleServerSource.exists() }

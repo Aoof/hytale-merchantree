@@ -25,19 +25,24 @@ public class KioskAsset implements JsonAssetWithMap<String, DefaultAssetMap<Stri
          (asset, data) -> asset.extraData = data,
          asset -> asset.extraData
       )
-      .addField(new KeyedCodec<>("DisplayNameKey", Codec.STRING), (asset, s) -> asset.displayNameKey = s, asset -> asset.displayNameKey)
-      .addField(
+      .append(new KeyedCodec<>("DisplayNameKey", Codec.STRING), (asset, s) -> asset.displayNameKey = s, asset -> asset.displayNameKey)
+         .add()
+      .append(
          new KeyedCodec<>("RefreshInterval", RefreshInterval.CODEC), (asset, interval) -> asset.refreshInterval = interval, asset -> asset.refreshInterval
       )
-      .addField(
+        .add()
+      .append(
          new KeyedCodec<>("Trades", new ArrayCodec<>(PlayerTrade.CODEC, PlayerTrade[]::new)), (asset, trades) -> asset.trades = trades, asset -> asset.trades
       )
-      .addField(
+        .add()
+      .append(
          new KeyedCodec<>("TradeSlots", new ArrayCodec<>(TradeSlot.CODEC, TradeSlot[]::new)),
          (asset, slots) -> asset.tradeSlots = slots,
          asset -> asset.tradeSlots
       )
-      .addField(new KeyedCodec<>("RestockHour", Codec.INTEGER, true), (asset, hour) -> asset.restockHour = hour, asset -> asset.restockHour)
+        .add()
+      .append(new KeyedCodec<>("RestockHour", Codec.INTEGER, true), (asset, hour) -> asset.restockHour = hour, asset -> asset.restockHour)
+        .add()
       .build();
    public static final ValidatorCache<String> VALIDATOR_CACHE = new ValidatorCache<>(new AssetKeyValidator<>(KioskAsset::getAssetStore));
    private static AssetStore<String, KioskAsset, DefaultAssetMap<String, KioskAsset>> ASSET_STORE;

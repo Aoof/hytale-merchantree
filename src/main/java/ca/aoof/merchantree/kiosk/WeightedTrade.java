@@ -95,12 +95,6 @@ public class WeightedTrade implements IWeightedElement {
       return new PlayerTrade(this.output, this.input, this.resolveStock(random));
    }
 
-   /** @deprecated */
-   @Nonnull
-   public PlayerTrade toPlayerTrade() {
-      return new PlayerTrade(this.output, this.input, this.getStockMin());
-   }
-
    @Nonnull
    @Override
    public String toString() {

@@ -2,8 +2,13 @@ pluginManagement {
     repositories {
         gradlePluginPortal()
         mavenCentral()
-        maven("https://maven.hytale-modding.info/releases") {
-            name = "HytaleModdingReleases"
+        maven {
+            name = "hytale-release"
+            url = uri("https://maven.hytale.com/release")
+        }
+        maven {
+            name = "hytale-pre-release"
+            url = uri("https://maven.hytale.com/pre-release")
         }
     }
 }

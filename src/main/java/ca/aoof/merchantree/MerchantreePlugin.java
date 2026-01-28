@@ -1,6 +1,7 @@
 package ca.aoof.merchantree;
 
 import ca.aoof.merchantree.kiosk.KioskAsset;
+import ca.aoof.merchantree.kiosk.builders.BuilderActionOpenKiosk;
 import com.hypixel.hytale.assetstore.map.DefaultAssetMap;
 import com.hypixel.hytale.builtin.adventure.shop.GiveItemInteraction;
 import com.hypixel.hytale.builtin.adventure.shop.ShopElement;
@@ -17,6 +18,7 @@ import com.hypixel.hytale.server.core.plugin.JavaPlugin;
 import com.hypixel.hytale.server.core.plugin.JavaPluginInit;
 import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.util.Config;
+import com.hypixel.hytale.server.npc.NPCPlugin;
 import org.jspecify.annotations.NonNull;
 
 import java.util.concurrent.CompletableFuture;
@@ -45,6 +47,8 @@ public class MerchantreePlugin extends JavaPlugin {
     @Override
     protected void setup() {
         LOGGER.atInfo().log("Loaded %s version %s", this.getName(), this.getManifest().getVersion().toString());
+
+        NPCPlugin.get().registerCoreComponentType("OpenKiosk", BuilderActionOpenKiosk::new);
 
         this.getAssetRegistry()
             .register(
